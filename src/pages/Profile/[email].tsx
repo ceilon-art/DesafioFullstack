@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import api from '../../utils/services';
 
 import ProfileNav from '../../components/ProfileNav';
-import Footer from '../../components/Footer';
 
 import { Container, Wrapper, CommentArea } from './styles';
 
@@ -67,7 +66,6 @@ const IndexPage: NextPage = () => {
         ))}
         
       </Wrapper>
-      <Footer />
     </Container>
   );
 };

@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import api from '../../utils/services';
 import { Formik, ErrorMessage } from 'formik';
+import { useRouter } from 'next/router'
 
+import api from '../../utils/services';
 import schema from '../../utils/schemaYup/schema';
 
 import { Container, Formulary, SubmitButton, Input } from './styles';
@@ -13,7 +13,8 @@ interface MyFormValues {
   image: string;
 }
 
-export default function Home() {  
+export default function Home() { 
+  const router = useRouter();
 
   const initialValues: MyFormValues = {
     name: '',
@@ -26,6 +27,7 @@ export default function Home() {
     try {
       await api.post('/api/create-user', values);
       alert("Conta criada com sucesso")
+      router.push('/Logon');
     } catch (err) {
       alert(
         err?.response?.data?.error || "Houve um problema na criação da sua conta"
@@ -81,9 +83,7 @@ export default function Home() {
               />     
               <ErrorMessage name='image' />
               <SubmitButton type="submit">
-                <Link href='/Profile'>
                   <span>Criar Conta</span>
-                </Link>
               </SubmitButton>
             </Formulary>      
           </>     

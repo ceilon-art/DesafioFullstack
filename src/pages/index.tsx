@@ -1,87 +1,65 @@
 import { NextPage } from 'next';
+import Link from 'next/link';
 
-import Footer from '../components/Footer';
-import Nav from '../components/MainNav';
+import NavBar from '../components/NavBar';
+import Button from '../components/Button';
 
-import { Container, Wrapper, FirstParagraph, CommonParagraph } from '../styles/IndexStyle';
+import {
+  Container,
+  Section,
+  Presentation,
+  Background,
+  Try,
+  SideText,
+  Author
+} from '../styles/IndexStyle';
 
 const IndexPage: NextPage = () => {
   return (
-    <Container>
-      <Wrapper>
-        <Nav />
-        <FirstParagraph>
-          <h1>
-            Você é universitário, e está com dificuldade em alguma
-            disciplina ou gostaria de conhecer mais sobre outros assuntos?
-            Venha para o Desafio Fullstack, um blog no qual você pode trocar
-            informações das mais diversas com quem você quiser e de onde estiver! 
-          </h1>
-          
-          <img
-            src='/indice.jpg'
-            alt='Indice'
-          />
-        </FirstParagraph>
-      </Wrapper>
-
-      <Wrapper>        
-        <p>
-          Somos facilitadores de conteúdo de ensino entre pessoas
-          interessadas em aprender mais sobre quaisquer assunto.
-        </p>
-      </Wrapper>
-
-      <Wrapper>
-        <h1>Bem vindo</h1>
-        <CommonParagraph>
+    <>
+      <NavBar />
+      <Container>
+        <Section>
+          <h1>Já pensou em ter uma rede social em que todos podem ver suas ideias sem necessitar de uma solicitação de amizade?</h1>
+          <h2>
+            Não se preocupe, pois criamos o aplicativo perfeito para que você faça isso!
+          </h2>
+        </Section>
+      </Container>
+      <Background>
+        <Presentation>
+          <h2>Apresnto para você...</h2>
+          <h1>O Meu Mural</h1>
           <p>
-            Nosso site foi criado com o intuito de facilitar a vida de alunos
-            e interessados que queiram se aplicar mais em seus estudos e também
-            adquirir novos conhecimentos sobre assuntos dos mais diversos.
+            Um aplicativo em que você pode compartilhar tudo sobre o que você quiser sem burocracia!!
           </p>
-
-          <img
-            src='/estudos.jpg'
-            alt='Estudos'
-          />
-        </CommonParagraph>
-
-        <CommonParagraph>
+        </Presentation>
+      </Background>
+      <Try>
+        <img src='/garoto.jpg' alt='Create Account'/>
+        <SideText>
           <p>
-            Com ferramentas para marcar aulas e agendar horários sempre buscando o
-            modo mais facil para o usuário se programar e melhor utilizar seu
-            tempo e foco para estudos. Com a nossa ajuda você vê professores que
-            podem atender no horário em que você tenha disponibilidade, caso não
-            encontre nenhum com atendimento quando precisa, pode agendar um
-            horário com o próprio tutor.
-          </p>          
-        </CommonParagraph>
-      </Wrapper>
-
-      <Wrapper>
-        <CommonParagraph>
-          <p>
-            Cansado de querer se aprofundar mais nos seus estudos, mas não
-            consegue achar um conteúdo que realmente valha a pena mergulhar?
-          </p>          
-        </CommonParagraph>
-
-        <CommonParagraph>
-          <p>
-            Junte-se a nós e ajude a criar um ambiente de conteúdo de qualidade 
-            e interessante. Cadastre-se no site, e comece a ter acesso aos mais
-            diversos posts onde você pode aprender o que quiser e quando quiser.
+            Isso leva 30 segundos e, além disso, é tudo gratuito!
           </p>
-
-          <img
-            src='/final.jpg'
-            alt='Imagem Final'
-          />
-        </CommonParagraph>
-      </Wrapper>
-      <Footer />
-    </Container>
+          <Link href="/create-account">
+            <div>
+              <Button color="#10B26C" hover="#12DB89">
+                Crie sua conta
+              </Button>
+            </div>            
+          </Link>
+        </SideText>
+      </Try>
+      <Author>
+        <a
+          href="https://github.com/ceilon-art?tab=repositories"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <p>Website criado por André Luiz Kanaan Nagano</p>
+        </a>
+      </Author>
+    </>
   );
 };
 
