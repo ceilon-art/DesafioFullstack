@@ -1,15 +1,28 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: 80vw;
+  margin: 0 auto;
+`;
 
-  h1 {
-    font-size: 40px;
+export const GoBack = styled.div`
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  p {
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  img {
+    width: 25px;
   }
 `;
+
 
 export const LoginSession = styled.div`
   display: flex;
@@ -17,47 +30,39 @@ export const LoginSession = styled.div`
   justify-content: center;
   align-items: center;
 
-  a {
-    margin: 15px;
-    color: blue;
-    cursor: pointer;
-  }
-
-  hr {
-    margin: 15px;
-    width: 250px;
-    background-color: #D3D3D3;
-  }
+  margin-top: 200px;
+  animation: loadAnimation;
+  animation-duration: 400ms;
+  text-align: center;
 `;
 
 export const Input = styled.input`
-  background-color: #F5F5F5;
+  background: #ebeaed 0% 0% no-repeat padding-box;
   color: black;
   border: none;
-  margin: 10px;
-  padding: 7px; 
-  width: 250px;
+  padding: 10px 15px;
+  width: 700px;
   height: 40px;
-  border-radius: 4px;
-  font-size: 14px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: text;
 
   ::placeholder {
     color: #778899;
+    margin-top: 6px
   }
 
-  cursor: pointer;
-
   &:focus {
-    border: 1px solid #4F4F4F;
+    border: 1px solid #dedce1;
   }
 `;
 
 export const LoginButton = styled.button`
-  background-color: #1E90FF;
+  background-color: #2F55CC;
   color: white;
   font-weight: bold;
   border: none;
-  margin: 10px;
+  margin: 15px 0;
   width: 180px;
   height: 40px;
   border-radius: 4px;
@@ -67,26 +72,19 @@ export const LoginButton = styled.button`
   transition: background-color .3s;
 
   &:hover, &:focus {
-    background-color: #87CEEB;
+    background-color: #365DF0;
   }
 `;
 
-export const NewAccount = styled.button`
-  background-color: #42b72a;
-  color: white;
-  font-weight: bold;
-  border: none;
-  margin: 10px;
-  padding: 7px; 
-  width: 180px;
-  height: 40px;
-  border-radius: 4px;
-  font-size: 14px;
-
+export const CreateAccount = styled.div`
+  text-align: center;
+  margin-top: 20px;
+  font-size: 24px;
   cursor: pointer;
-  transition: background-color .3s;
+
+  transition: color .3s;
 
   &:hover {
-    background-color: #00FF7F;
+    color: #778899;
   }
 `;

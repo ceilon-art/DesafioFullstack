@@ -1,10 +1,18 @@
+import Link from 'next/link';
 import { Formik, ErrorMessage } from 'formik';
 import { useRouter } from 'next/router'
 
 import api from '../../utils/services';
 import schema from '../../utils/schemaYup/schema';
 
-import { Container, Formulary, SubmitButton, Input } from './styles';
+import {
+  Container,
+  GoBack,
+  Formulary,
+  Input,
+  SubmitButton, 
+  Login
+} from './styles';
 
 interface MyFormValues {
   name: string;
@@ -37,7 +45,12 @@ export default function Home() {
 
   return (
     <Container>
-      <h1>Crie sua conta no Desafio Fullstack</h1>
+      <Link href="/">
+        <GoBack>
+          <img src= '/back.svg' alt="Go back home" />
+          <p>Home</p>
+        </GoBack>
+      </Link>
       <Formik
         validationSchema={schema}
         onSubmit={onSubmit}
@@ -83,9 +96,16 @@ export default function Home() {
               />     
               <ErrorMessage name='image' />
               <SubmitButton type="submit">
-                  <span>Criar Conta</span>
+                <span>Criar Conta</span>
               </SubmitButton>
-            </Formulary>      
+            </Formulary>   
+            <Login>
+              <div>
+                <Link href="/Logon">
+                  <p>Já tenho uma conta</p>
+                </Link>
+              </div>
+            </Login>
           </>     
         )}
       </Formik>

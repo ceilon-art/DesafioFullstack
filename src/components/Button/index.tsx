@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 
 import { Container } from './styles';
 
-export interface ButtonProps {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   color?: string;
   hover?: string;
-  type?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({ children, color, hover, type }) => {

@@ -4,7 +4,14 @@ import { useRouter } from 'next/router'
 
 import api from '../../utils/services';
 
-import { Container, LoginSession, Input, LoginButton, NewAccount } from './styles';
+import {
+  Container,
+  GoBack,
+  LoginSession,
+  Input,
+  LoginButton,
+  CreateAccount
+} from './styles';
 
 export default function Home() {
   const [email, setEmail] = useState(null);
@@ -24,7 +31,13 @@ export default function Home() {
   return (
       <>
         <Container>
-          <h1>Faça login ou crie sua conta</h1>
+          <Link href="/">
+            <GoBack>
+              <img src='/back.svg' alt="Go back home" />
+              <p>Home</p>
+            </GoBack>
+          </Link>
+        
           <LoginSession>
             <Input
               type='text'
@@ -35,11 +48,11 @@ export default function Home() {
             <LoginButton type='button' onClick={handleSubmit}>
               Entrar
             </LoginButton>
-            <NewAccount type='button'> 
-              <Link href='/create-account'>
-                <span>Criar nova conta</span>
+            <CreateAccount>
+              <Link href="/create-account">
+                <p>Create account</p>
               </Link>
-            </NewAccount>
+            </CreateAccount>
           </LoginSession>          
         </Container>   
       </>

@@ -36,7 +36,7 @@ const IndexPage: NextPage = () => {
         </Presentation>
       </Background>
       <Try>
-        <img src='/garoto.jpg' alt='Create Account'/>
+        <img src='/girl.svg' alt='Create Account'/>
         <SideText>
           <p>
             Isso leva 30 segundos e, além disso, é tudo gratuito!
